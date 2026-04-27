@@ -18,7 +18,7 @@ export const hero = {
   subtitle: 'Creamos experiencias web que no solo se ven bien, sino que conectan. Sitios rápidos, modernos y diseñados para que tu marca nunca deje de crecer.',
   ctaPrimary:   { label: 'Servicios', href: '/ofertas' },
   ctaSecondary: { label: 'Hablemos hoy',      href: '#contacto'  },
-  mascotAlt: 'Tatosh, el pingüino de Tatosh-Dev',
+  mascotAlt: 'Tatosh, el pingüino mascota de Tatosh-Dev — estudio de diseño y desarrollo web en Argentina',
 }
 
 export const servicios = {

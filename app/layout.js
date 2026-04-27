@@ -21,13 +21,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-// ── SEO ───────────────────────────────────────────────────────────────────────
-// Optimización SEO: metadatos completos para que Google indexe correctamente el
-// sitio y muestre información enriquecida en los resultados de búsqueda.
+const siteUrl = 'https://tatosh-dev.com.ar'
+
 export const metadata = {
-  title:       'Tatosh-Dev — Desarrollo web profesional',
-  description: 'Diseñamos y desarrollamos sitios web modernos, rápidos y que conectan tu marca con el mundo.',
-  keywords:    ['desarrollo web', 'diseño web', 'Next.js', 'Argentina', 'Tatosh-Dev', 'agencia web'],
+  title:       'Tatosh-Dev | Diseño y Desarrollo Web Profesional',
+  description: 'Diseño web a medida, sitios institucionales, landing pages y e-commerce en Argentina. 6 meses de garantía incluidos.',
+  keywords:    ['diseño web argentina', 'desarrollo web', 'landing page', 'sitio institucional', 'ecommerce argentina', 'Tatosh-Dev'],
   authors:     [{ name: 'Tatosh-Dev' }],
   robots: {
     index:     true,
@@ -35,20 +34,29 @@ export const metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   alternates: {
-    canonical: 'https://tatosh-dev.com.ar',
+    canonical: siteUrl,
   },
   openGraph: {
-    title:       'Tatosh-Dev — Desarrollo web profesional',
-    description: 'Diseñamos y desarrollamos sitios web modernos, rápidos y que conectan tu marca con el mundo.',
-    url:         'https://tatosh-dev.com.ar',
+    title:       'Tatosh-Dev | Diseño y Desarrollo Web Profesional',
+    description: 'Diseño web a medida, sitios institucionales, landing pages y e-commerce en Argentina. 6 meses de garantía incluidos.',
+    url:         siteUrl,
     siteName:    'Tatosh-Dev',
     locale:      'es_AR',
     type:        'website',
+    images: [
+      {
+        url:    `${siteUrl}/images/tathos-trabajando.png`,
+        width:  1200,
+        height: 630,
+        alt:    'Tatosh-Dev — Diseño y Desarrollo Web Profesional en Argentina',
+      },
+    ],
   },
   twitter: {
     card:        'summary_large_image',
-    title:       'Tatosh-Dev — Desarrollo web profesional',
-    description: 'Diseñamos y desarrollamos sitios web modernos, rápidos y que conectan tu marca con el mundo.',
+    title:       'Tatosh-Dev | Diseño y Desarrollo Web Profesional',
+    description: 'Diseño web a medida, sitios institucionales, landing pages y e-commerce en Argentina. 6 meses de garantía incluidos.',
+    images:      [`${siteUrl}/images/tathos-trabajando.png`],
   },
 }
 
