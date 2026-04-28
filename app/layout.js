@@ -1,5 +1,6 @@
 import { Space_Grotesk, Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
       <body className="bg-background text-app-text font-inter antialiased">
         {children}
         <WhatsAppButton />
+        <GoogleAnalytics gaId="G-KW1F5H15PL" />
       </body>
 
       {/*
