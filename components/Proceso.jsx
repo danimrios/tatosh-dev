@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { proceso } from '@/data/content'
 
 const stepIcons = [
@@ -50,7 +50,7 @@ export default function Proceso() {
         </div>
 
         {/* 3 columnas */}
-        <motion.div
+        <m.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 relative mb-16"
           variants={container}
           initial={reduced ? false : 'hidden'}
@@ -61,7 +61,7 @@ export default function Proceso() {
           <div className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10" />
 
           {proceso.steps.map((step, i) => (
-            <motion.div
+            <m.div
               key={step.number}
               variants={reduced ? {} : stepVariant}
               className="relative flex flex-col items-center text-center"
@@ -96,9 +96,9 @@ export default function Proceso() {
                   ))}
                 </ul>
               )}
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Texto equipo */}
         <div className="max-w-2xl mx-auto text-center space-y-3">

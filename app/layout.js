@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import MotionProvider from '@/components/MotionProvider'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -68,7 +69,9 @@ export default function RootLayout({ children }) {
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-background text-app-text font-inter antialiased">
-        {children}
+        <MotionProvider>
+          {children}
+        </MotionProvider>
         <WhatsAppButton />
         <GoogleAnalytics gaId="G-KW1F5H15PL" />
       </body>

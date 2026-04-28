@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { hero } from '@/data/content'
 import { images, whatsapp } from '@/data/links'
 
@@ -18,13 +18,13 @@ const charVariant = {
 
 function AnimatedTitle({ text, className }) {
   return (
-    <motion.span className={className} variants={titleContainer} initial="hidden" animate="visible">
+    <m.span className={className} variants={titleContainer} initial="hidden" animate="visible">
       {text.split('').map((char, i) => (
-        <motion.span key={i} variants={charVariant}>
+        <m.span key={i} variants={charVariant}>
           {char}
-        </motion.span>
+        </m.span>
       ))}
-    </motion.span>
+    </m.span>
   )
 }
 
@@ -49,14 +49,14 @@ export default function Hero() {
           {/* ── Contenido izquierdo ── */}
           <div className="flex-1 text-center md:text-left w-full">
             {/* Badge */}
-            <motion.span
+            <m.span
               initial={reduced ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
               className="hidden md:inline-block font-mono text-xs text-detail bg-detail/10 border border-detail/20 rounded-full px-4 py-1 mb-6"
             >
               {hero.badge}
-            </motion.span>
+            </m.span>
 
             {/* Mobile: título + mascota en fila */}
             <div className="flex items-center justify-center gap-4 mb-6 md:block md:mb-0">
@@ -76,7 +76,7 @@ export default function Hero() {
               </h1>
 
               {/* Mascota pequeña — solo mobile */}
-              <motion.div
+              <m.div
                 className="relative w-28 h-36 flex-shrink-0 md:hidden"
                 initial={reduced ? false : { opacity: 0 }}
                 animate={reduced ? {} : { opacity: 1, y: [0, -8, 0] }}
@@ -90,24 +90,25 @@ export default function Hero() {
                   src={images.mascot}
                   alt={hero.mascotAlt}
                   fill
+                  sizes="112px"
                   className="object-contain drop-shadow-2xl relative"
                   priority
                 />
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Subtítulo */}
-            <motion.p
+            <m.p
               initial={reduced ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
               className="font-inter text-lg text-app-text/70 leading-relaxed mb-10 max-w-lg mx-auto md:mx-0"
             >
               {hero.subtitle}
-            </motion.p>
+            </m.p>
 
             {/* CTAs */}
-            <motion.div
+            <m.div
               initial={reduced ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55, ease: 'easeOut' }}
@@ -127,12 +128,12 @@ export default function Hero() {
               >
                 {hero.ctaSecondary.label}
               </a>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* ── Mascota derecha — solo desktop ── */}
           <div className="hidden md:flex flex-1 justify-end">
-            <motion.div
+            <m.div
               className="relative w-80 h-96 sm:w-96 sm:h-[28rem]"
               initial={reduced ? false : { opacity: 0 }}
               animate={reduced
@@ -152,10 +153,11 @@ export default function Hero() {
                 src={images.mascot}
                 alt={hero.mascotAlt}
                 fill
+                sizes="(max-width: 768px) 0px, 384px"
                 className="object-contain drop-shadow-2xl relative"
                 priority
               />
-            </motion.div>
+            </m.div>
           </div>
 
         </div>

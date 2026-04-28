@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { franja } from '@/data/content'
 
 const badgeIcons = {
@@ -39,7 +39,7 @@ export default function FranjaBadges() {
   return (
     <div style={{ backgroundColor: '#75AADB' }} className="py-5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <motion.div
+        <m.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10"
           variants={container}
           initial={reduced ? false : 'hidden'}
@@ -47,7 +47,7 @@ export default function FranjaBadges() {
           viewport={{ once: true }}
         >
           {franja.badges.map((badge) => (
-            <motion.div
+            <m.div
               key={badge.id}
               variants={reduced ? {} : badgeVariant}
               className="flex items-center gap-2.5"
@@ -61,9 +61,9 @@ export default function FranjaBadges() {
               >
                 {badge.label}
               </span>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </div>
   )

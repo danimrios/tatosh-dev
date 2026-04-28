@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ofertas } from '@/data/content'
 import { images, whatsappService } from '@/data/links'
 
@@ -82,7 +82,7 @@ export default function Ofertas() {
           <div className="mb-12 sm:mt-24">
             <div style={{ position: 'relative' }}>
             {/* Tatosh solo visible en desktop donde los tabs son horizontales */}
-            <motion.div
+            <m.div
               animate={{
                 left: TAB_POSITIONS[tabIndex],
                 y: [0, -6, 0],
@@ -104,9 +104,10 @@ export default function Ofertas() {
                 src={images.ofertasAnim}
                 alt="Tatosh, mascota de Tatosh-Dev, señalando el servicio activo"
                 fill
+                sizes="60px"
                 className="object-contain"
               />
-            </motion.div>
+            </m.div>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 bg-primary/5 border border-primary/10 rounded-2xl p-1.5">
               {ofertas.tabs.map((t) => (
                 <button
