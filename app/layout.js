@@ -30,6 +30,9 @@ export const metadata = {
   description: 'Diseño web a medida, sitios institucionales, landing pages y e-commerce en Argentina. 6 meses de garantía incluidos.',
   keywords:    ['diseño web argentina', 'desarrollo web', 'landing page', 'sitio institucional', 'ecommerce argentina', 'Tatosh-Dev'],
   authors:     [{ name: 'Tatosh-Dev' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   robots: {
     index:     true,
     follow:    true,
