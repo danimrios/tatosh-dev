@@ -14,7 +14,7 @@ export const images = {
 // ─── WhatsApp ─────────────────────────────────────────────────────────────────
 // Reemplazá WHATSAPP_NUMBER con tu número: código de país + número sin espacios
 // Ejemplo Argentina: 5491112345678
-const WHATSAPP_NUMBER = 'WHATSAPP_NUMBER'
+const WHATSAPP_NUMBER = '5491136125857'
 
 function wa(msg) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
